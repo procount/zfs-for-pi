@@ -22,6 +22,7 @@ sudo apt install -y python3 python3-dev python3-setuptools python3-cffi
 
 make clean || true
 make distclean || true
+sudo rm -rf bin
 
 ./autogen.sh
 autoreconf --install --force
