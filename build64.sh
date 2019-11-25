@@ -61,15 +61,10 @@ autoreconf --install --force
 make -s -j$(nproc)
 sudo make install
 
-tar -cvzf 64-bit-zfs-modules.tar.gz /lib/modules/4.19.75-v8/extra/
+tar -cvzf 64-bit-zfs-modules.tar.gz /lib/modules/4.19.75-v8/
 
-sftp pi@$HOST:/lib/modules/4.19.75-v8+ <<< $'put 64-bit-zfs-modules.tar.gz'
+sftp pi@$HOST:/home/pi <<< $'put 64-bit-zfs-modules.tar.gz'
 
-#sudo ldconfig
-
-#sudo depmod -a
-#sudo modprobe zfs
-#sudo zpool import -a
-#sudo zpool import -a -d /dev
+echo "Now run build32.sh"
 
 cd "${CUR_DIR}"
