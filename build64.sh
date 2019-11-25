@@ -12,6 +12,9 @@ set -x
 CUR_PWD="$(pwd)"
 cd "$(dirname $0)"
 
+# Install required packages
+sudo apt install build-essential bison flex bc libssl-dev wget git
+
 # Build Linux kernel. Most of this we don't use - we just need the
 # kernel headers and the Modules.symvers
 
@@ -23,19 +26,18 @@ make -j6
 make modules_prepare
 make modules -j6
 
-# build ZFS
+# build ZFS 64-bit modules
 
 if [ ! -d zfs ]; then
     # https://github.com/zfsonlinux/zfs/wiki/Building-ZFS
-    sudo apt-get install -y build-essential autoconf automake libtool gawk alien fakeroot ksh
+    sudo apt-get install -y autoconf automake libtool gawk alien fakeroot ksh
     sudo apt-get install -y zlib1g-dev uuid-dev libattr1-dev libblkid-dev libselinux-dev libudev-dev
-    sudo apt-get install -y libacl1-dev libaio-dev libdevmapper-dev libssl-dev libelf-dev
+    sudo apt-get install -y libacl1-dev libaio-dev libdevmapper-dev libelf-dev
     sudo apt-get install -y python3 python3-dev python3-setuptools python3-cffi
 
     #sudo apt-get install -y linux-headers-$(uname -r)
     #sudo apt-get install raspberrypi-kernel-headers
 
-    sudo apt-get install -y git
     git clone https://github.com/zfsonlinux/zfs.git
 fi
 
