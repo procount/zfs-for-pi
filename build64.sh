@@ -3,11 +3,27 @@
 # by andrum99
 # Based on https://gist.github.com/Alexey-Tsarev/d5809e353e756c5ce2d49363ed63df35
 
+# This script must be run in a 64-bit userland on the Raspberry Pi. For example, under the 64-bit systemd-nspawn
+# container provided by sakaki - see https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=232417&p=1566755&hilit=zfs#p1566212
+
 set -e
 set -x
 
 CUR_PWD="$(pwd)"
 cd "$(dirname $0)"
+
+# Build Linux kernel. Most of this we don't use - we just need the
+# kernel headers and the Modules.symvers
+
+git clone https://github.com/raspberrypi/linux/archive/raspberrypi-kernel_1.20190925-1.tar.gz
+cd linux-raspberrypi-kernel_1.20190925-1
+KERNEL=kernel8
+make bcm2711_defconfig
+make -j6
+make modules_prepare
+make modules -j6
+
+# build ZFS
 
 if [ ! -d zfs ]; then
     # https://github.com/zfsonlinux/zfs/wiki/Building-ZFS
