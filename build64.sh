@@ -9,6 +9,10 @@
 set -e
 set -x
 
+# set this to the name of the host Pi on which you are running. This is used to tell sftp which host to send the kernel modules to
+# If you are using a native 64-bit userland on a 64-bit kernel, you can modify the script to copy the files directly
+HOST=pi4b2
+
 CUR_PWD="$(pwd)"
 cd "$(dirname $0)"
 
@@ -56,6 +60,10 @@ autoreconf --install --force
 
 make -s -j$(nproc)
 sudo make install
+
+tar -cvzf 64-bit-zfs-modules.tar.gz /lib/modules/4.19.75-v8/extra/
+
+sftp pi@$HOST:/lib/modules/4.19.75-v8+ <<< $'put 64-bit-zfs-modules.tar.gz'
 
 #sudo ldconfig
 
