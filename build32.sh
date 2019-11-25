@@ -7,7 +7,7 @@
 # Copy 64-bit kernel modules from where build64 left them
 mkdir mods
 cd mods
-tar xvf 64-bit-zfs-modules.tar.gz
+tar xvf ../64-bit-zfs-modules.tar.gz
 cp -a * /lib/modules/4.19.75-v8+
 
 # Load the modules
