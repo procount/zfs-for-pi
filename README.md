@@ -10,4 +10,4 @@ This repository contains build scripts to allow building ZFS on Raspbian. It bui
 4. Switch to a 32-bit kernel
 5. Run build32.sh
 
-It should be possible to make Debian packages from these files pretty easily - stay tuned 😀
+It should be possible to make Debian packages from the resultant files pretty easily - stay tuned 😀
