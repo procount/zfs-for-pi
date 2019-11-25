@@ -30,7 +30,7 @@ make distclean || true
 
 ./autogen.sh
 autoreconf --install --force
-./configure --with-linux=/home/pi/linux-raspberrypi-kernel_1.20190925-1
+./configure
 
 make -s -j$(nproc)
 sudo make install
