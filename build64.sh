@@ -3,7 +3,7 @@
 # by andrum99
 # Based on https://gist.github.com/Alexey-Tsarev/d5809e353e756c5ce2d49363ed63df35
 
-# This script must be run in a 64-bit userland on the Raspberry Pi. For example, under the 64-bit systemd-nspawn
+# This script must be run in a 64-bit userland on a Raspberry Pi running Raspbian. For example, under the 64-bit systemd-nspawn
 # container provided by sakaki - see https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=232417&p=1566755&hilit=zfs#p1566212
 
 set -e
