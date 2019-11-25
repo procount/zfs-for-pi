@@ -1,6 +1,10 @@
 # zfs-for-pi
 ZFS for the Raspberry Pi.
 
-This repository contains packages which can be installed directory on a Raspberry Pi running Raspbian. The packages contain 64-bit kernel modules, together with 32-bit userland and configuration elements. It has to be done that way on Raspbian at the moment, since Raspbian does not have a native 64-bit userland.
+This repository contains build scripts to allow building ZFS on Raspbian.
 
-I have no intention of creating 32-bit kernel modules for ZFS. Running ZFS on a 32-bit system is known to be problematic. If you want 32-bit kernel modules, you will need to build them yourself.
+## Procedure
+1. Switch to a 64-bit kernel
+2. Install the 64-bit systemd-nspawn from sakaki (see https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=232417&p=1566755&hilit=zfs#p1566212)
+3. Run build64.sh within the 64-bit systemd-nspawn container
+4. Run build32.sh
