@@ -9,3 +9,5 @@ This repository contains build scripts to allow building ZFS on Raspbian. It bui
 3. Run build64.sh within the 64-bit systemd-nspawn container
 4. Switch to a 32-bit kernel
 5. Run build32.sh
+
+It should be possible to make Debian packages from these file pretty easily - stay tuned 😀
