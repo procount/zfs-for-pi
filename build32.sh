@@ -36,3 +36,9 @@ wget -q -O - https://ftp-master.debian.org/keys/archive-key-10.asc | sudo apt-ke
 echo "deb http://deb.debian.org/debian/ buster-backports main contrib" | sudo tee /etc/apt/sources.list.d/debian.list
 sudo apt update
 sudo apt install zfsutils-linux
+
+# Optional ZFS packages from buster-backports
+# sudo apt install zfs-auto-snapshot zfs-zed zfssnap libguestfs-zfs libvirt-daemon-driver-storage-zfs zfs-initramfs
+
+# Optional ZFS development packages from buster-backports
+# sudo apt install golang-go-zfs-dev python3-pyzfs pyzfs-doc
