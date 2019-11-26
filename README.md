@@ -12,6 +12,4 @@ This repository contains build scripts to allow building ZFS on Raspbian. It bui
 4. Switch to a 32-bit kernel
 5. Run build32.sh
 
-To-do: add zfs-utils
-
-It should be possible to make Debian packages from the resultant files pretty easily - stay tuned 😀
+N.B. This is just a stop-gap until Raspbian supports a full 64-bit userland.
