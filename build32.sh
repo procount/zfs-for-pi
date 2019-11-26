@@ -11,10 +11,6 @@ set -x
 cd /
 sudo tar xvf /home/pi/64-bit-zfs-modules.tar.gz
 
-# Update kernel config
-sudo ldconfig
-sudo depmod -a
-
 # build 32-bit part of zfs-linux
 
 sudo apt install raspberrypi-kernel-headers
@@ -35,6 +31,10 @@ autoreconf --install --force
 
 make -s -j6
 sudo make install
+
+# Update kernel config
+sudo ldconfig
+sudo depmod -a
 
 # Install zfsutils-linux package from buster-backports
 wget -q -O - https://ftp-master.debian.org/keys/archive-key-10.asc | sudo apt-key add -
