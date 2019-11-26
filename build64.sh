@@ -61,8 +61,7 @@ autoreconf --install --force
 make -s -j6
 sudo make install
 
-tar -cvzf 64-bit-zfs-modules.tar.gz /lib/modules/4.19.75-v8/
-
+tar -C /lib/modules/4.19.75-v8/ -cvzf 64-bit-zfs-modules.tar.gz -C /lib/modules/4.19.75-v8/
 echo "Now run build32.sh"
 
 cd "${CUR_DIR}"
