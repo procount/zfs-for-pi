@@ -30,3 +30,9 @@ autoreconf --install --force
 
 make -s -j6
 sudo make install
+
+# Install zfsutils-linux package from buster-backports
+wget -q -O - https://ftp-master.debian.org/keys/archive-key-10.asc | sudo apt-key add -
+echo "deb http://deb.debian.org/debian/ buster-backports main contrib" | sudo tee /etc/apt/sources.list.d/debian.list
+sudo apt update
+sudo apt install zfsutils-linux
