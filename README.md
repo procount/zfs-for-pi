@@ -12,6 +12,6 @@ This repository contains build scripts to allow building ZFS on Raspbian. It bui
 4. Switch to a 32-bit kernel
 5. Run build32.sh
 6. Switch to a 64-bit kernel
-7. profit
+7. Profit
 
 N.B. This is just a stop-gap until Raspbian supports a full 64-bit userland, at which point we will be able to use the stock Debian packages without modification - including zfs-dkms.
