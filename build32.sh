@@ -10,6 +10,10 @@ cd mods
 tar xvf ../64-bit-zfs-modules.tar.gz
 cp -a * /lib/modules/4.19.75-v8+
 
+# Update kernel config
+sudo ldconfig
+sudo depmod -a
+
 # build 32-bit part of zfs-linux
 
 sudo apt install raspberrypi-kernel-headers
