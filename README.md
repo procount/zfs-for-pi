@@ -1,5 +1,7 @@
 # zfs-for-pi
-ZFS for the Raspberry Pi
+ZFS for the Raspberry Pi.
+
+I have tested this using hard disks for the storage pools and it performs faster than ext4 on the Raspberry Pi 4B. Yes really.
 
 Based on Alexey Tsarev's gist at https://gist.github.com/Alexey-Tsarev/d5809e353e756c5ce2d49363ed63df35
 
