@@ -9,10 +9,6 @@
 set -e
 set -x
 
-# set this to the name of the host Pi on which you are running. This is used to tell sftp which host to send the kernel modules to
-# If you are using a native 64-bit userland on a 64-bit kernel, you can modify the script to copy the files directly
-HOST=pi4b2
-
 CUR_DIR="$(pwd)"
 cd ~
 
