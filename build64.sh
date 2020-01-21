@@ -13,8 +13,8 @@ set -x
 # If you are using a native 64-bit userland on a 64-bit kernel, you can modify the script to copy the files directly
 HOST=pi4b2
 
-CUR_PWD="$(pwd)"
-cd "$(dirname $0)"
+CUR_DIR="$(pwd)"
+cd ~
 
 # Install required packages
 sudo apt update
@@ -24,6 +24,7 @@ sudo apt install -y build-essential bison flex bc libssl-dev wget git
 # kernel headers and the Module.symvers
 
 wget https://github.com/raspberrypi/linux/archive/raspberrypi-kernel_1.20200114-1.tar.gz
+tar -xvf raspberrypi-kernel_1.20200114-1.tar.gz
 cd linux-raspberrypi-kernel_1.20200114-1
 KERNEL=kernel8
 make bcm2711_defconfig
