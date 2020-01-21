@@ -17,6 +17,7 @@ CUR_PWD="$(pwd)"
 cd "$(dirname $0)"
 
 # Install required packages
+sudo apt update
 sudo apt install build-essential bison flex bc libssl-dev wget git
 
 # Build Linux kernel. Most of this we don't use - we just need the
