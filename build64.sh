@@ -22,8 +22,8 @@ sudo apt install build-essential bison flex bc libssl-dev wget git
 # Build Linux kernel. Most of this we don't use - we just need the
 # kernel headers and the Module.symvers
 
-wget https://github.com/raspberrypi/linux/archive/raspberrypi-kernel_1.20190925-1.tar.gz
-cd linux-raspberrypi-kernel_1.20190925-1
+wget https://github.com/raspberrypi/linux/archive/raspberrypi-kernel_1.20200114-1.tar.gz
+cd linux-raspberrypi-kernel_1.20200114-1
 KERNEL=kernel8
 make bcm2711_defconfig
 make -j6
