@@ -59,13 +59,13 @@ make distclean || true
 
 ./autogen.sh
 autoreconf --install --force
-./configure --with-linux=/home/pi/linux-raspberrypi-kernel_1.20190925-1
+./configure --with-linux=/home/pi/linux-raspberrypi-kernel_1.20200114-1
 
 make -s -j6
 sudo make install
 
-sudo mv /lib/modules/4.19.75-v8 /lib/modules/4.19.75-v8+
-tar -cvzf 64-bit-zfs-modules.tar.gz /lib/modules/4.19.75-v8+/
+sudo mv /lib/modules/4.19.93-v8 /lib/modules/4.19.93-v8+
+tar -cvzf 64-bit-zfs-modules-4.19.93.tar.gz /lib/modules/4.19.93-v8+/
 echo "Now run build32.sh"
 
 cd "${CUR_DIR}"
