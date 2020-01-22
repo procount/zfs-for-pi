@@ -61,7 +61,7 @@ make -s -j6
 sudo make install
 
 sudo mv /lib/modules/4.19.93-v8 /lib/modules/4.19.93-v8+
-tar -cvzf 64-bit-zfs-modules-4.19.93.tar.gz /lib/modules/4.19.93-v8+/
-echo "Now run build32.sh"
+tar -cvzf /home/pi/64-bit-zfs-modules-4.19.93.tar.gz /lib/modules/4.19.93-v8+/
+echo "Now switch to a 32-bit kernel and run build32.sh"
 
 cd "${CUR_DIR}"
