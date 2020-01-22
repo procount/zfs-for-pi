@@ -2,7 +2,7 @@
 # Install 64-bit kernel modules for Raspbian, and build 32-bit userland
 # by andrum99
 
-# This script must be run under a 32-bit userland on a 64-bit kernel
+# This script must be run under a 32-bit userland on a 32-bit kernel
 
 set -e
 set -x
