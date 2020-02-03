@@ -7,19 +7,19 @@ This repository contains build scripts to allow building ZFS on Raspbian. It bui
 
 Note: when the Raspbian kernel gets updated you must manually update these build scripts to point to the relevant source archive. Bear in  mind that updating your Pi using apt or apt-get will sometimes upgrade the kernel, which will cause ZFS to not load, unless you then build the modules using these scripts. You may find it useful to put the kernel packages on hold like this:
 
-`sudo apt-mark hold raspberrypi-bootloader
-
+~~~~
+sudo apt-mark hold raspberrypi-bootloader
 sudo apt-mark hold raspberrypi-kernel
-
-sudo apt-mark hold raspberrypi-kernel-headers`
+sudo apt-mark hold raspberrypi-kernel-headers
+~~~~
 
 To remove hold:
 
-`sudo apt-mark unhold raspberrypi-bootloader
-
+~~~~
+sudo apt-mark unhold raspberrypi-bootloader
 sudo apt-mark unhold raspberrypi-kernel
-
-sudo apt-mark unhold raspberrypi-kernel-headers`
+sudo apt-mark unhold raspberrypi-kernel-headers
+~~~~
 
 ## Procedure
 1. Switch to a 64-bit kernel
