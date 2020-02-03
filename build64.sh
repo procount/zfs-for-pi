@@ -46,7 +46,7 @@ fi
 
 cd zfs
 git checkout .
-git checkout zfs-0.8.2
+git checkout zfs-0.8.3
 #git pull
 #git branch
 
