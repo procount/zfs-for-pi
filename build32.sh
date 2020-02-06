@@ -47,6 +47,9 @@ echo "deb http://deb.debian.org/debian/ buster-backports main contrib" | sudo te
 sudo apt update
 sudo apt install -y zfsutils-linux
 
+# Make a tarball of the 32-bit kernel modules
+tar -cvzf /home/pi/32-bit-zfs-modules-4.19.97.tar.gz /lib/modules/4.19.97-v7l+/extra
+
 # Optional ZFS packages from buster-backports
 # sudo apt install zfs-auto-snapshot zfs-zed zfssnap libguestfs-zfs libvirt-daemon-driver-storage-zfs zfs-initramfs
 
