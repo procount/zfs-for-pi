@@ -9,7 +9,7 @@ set -x
 
 # Copy 64-bit kernel modules from where build64.sh left them
 cd /
-sudo tar xvf /home/pi/64-bit-zfs-modules-4.19.93.tar.gz
+sudo tar xvf /home/pi/64-bit-zfs-modules-4.19.97.tar.gz
 
 # build 32-bit part of zfs-linux
 
@@ -24,7 +24,7 @@ sudo apt install -y zlib1g-dev uuid-dev libattr1-dev libblkid-dev libselinux-dev
 sudo apt install -y libacl1-dev libaio-dev libdevmapper-dev libelf-dev
 sudo apt install -y python3 python3-dev python3-setuptools python3-cffi
 
-cd /home/pi/linux-raspberrypi-kernel_1.20200114-1/zfs
+cd /home/pi/linux-raspberrypi-kernel_1.20200205-1/zfs
 
 make clean || true
 make distclean || true
