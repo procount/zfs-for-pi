@@ -61,7 +61,7 @@ make -s -j6
 sudo make install
 
 sudo mv /lib/modules/4.19.93-v8 /lib/modules/4.19.97-v8+
-tar -cvzf /home/pi/64-bit-zfs-modules-4.19.93.tar.gz /lib/modules/4.19.97-v8+/extra
+tar -cvzf /home/pi/64-bit-zfs-modules-4.19.97.tar.gz /lib/modules/4.19.97-v8+/extra
 echo "Now exit the 64-bit userland, back to 32-bit userland (staying on 64-bit kernel) and run build64_part2.sh"
 
 cd "${CUR_DIR}"
