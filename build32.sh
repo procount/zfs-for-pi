@@ -9,7 +9,7 @@ set -x
 
 # Copy 64-bit kernel modules from where build64.sh left them
 cd /
-sudo tar xvf /home/pi/64-bit-zfs-modules-4.19.97.tar.gz
+sudo tar xvf /home/pi/64-bit-zfs-modules-4.19.97-v8+.tar.gz
 
 # build 32-bit part of zfs-linux
 
