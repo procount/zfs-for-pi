@@ -20,12 +20,12 @@ sudo apt install -y build-essential bison flex bc libssl-dev wget git
 # Build Linux kernel. Most of this we don't use - we just need the
 # kernel headers and the Module.symvers
 
-wget https://github.com/raspberrypi/linux/archive/raspberrypi-kernel_1.20200205-1.tar.gz
-tar -xvf raspberrypi-kernel_1.20200205-1.tar.gz
-cd linux-raspberrypi-kernel_1.20200205-1
+wget https://github.com/raspberrypi/linux/archive/raspberrypi-kernel_1.20200210-1.tar.gz
+tar -xvf raspberrypi-kernel_1.20200210-1.tar.gz
+cd raspberrypi-kernel_1.20200210-1.tar.gz
 KERNEL=kernel8
 make bcm2711_defconfig
-make -j6
+#make -j6
 make modules_prepare
 make modules -j6
 
@@ -55,7 +55,7 @@ make distclean || true
 
 ./autogen.sh
 autoreconf --install --force
-./configure --with-linux=/home/pi/linux-raspberrypi-kernel_1.20200205-1
+./configure --with-linux=/home/pi/linux-raspberrypi-kernel_1.20200210-1
 
 make -s -j6
 sudo make install
