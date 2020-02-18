@@ -7,9 +7,11 @@
 set -e
 set -x
 
+. ./version
+
 # Copy 64-bit kernel modules from where build64.sh left them
 cd /
-sudo tar xvf /home/pi/64-bit-zfs-modules-4.19.97-v8+.tar.gz
+sudo tar xvf /home/pi/64-bit-zfs-modules-${KERNEL}-v8+.tar.gz
 
 # build 32-bit part of zfs-linux
 
@@ -24,7 +26,7 @@ sudo apt install -y zlib1g-dev uuid-dev libattr1-dev libblkid-dev libselinux-dev
 sudo apt install -y libacl1-dev libaio-dev libdevmapper-dev libelf-dev
 sudo apt install -y python3 python3-dev python3-setuptools python3-cffi
 
-cd /home/pi/linux-raspberrypi-kernel_1.20200212-1/zfs
+cd /home/pi/linux-raspberrypi-kernel_${RELEASE}/zfs
 
 make clean || true
 make distclean || true
@@ -48,7 +50,7 @@ sudo apt update
 sudo apt install -y zfsutils-linux
 
 # Make a tarball of the 32-bit kernel modules
-tar -cvzf /home/pi/32-bit-zfs-modules-4.19.97-v7l+.tar.gz /lib/modules/4.19.97-v7l+/extra
+tar -cvzf /home/pi/32-bit-zfs-modules-${KERNEL}-v7l+.tar.gz /lib/modules/${KERNEL}-v7l+/extra
 
 # Optional ZFS packages from buster-backports
 # sudo apt install zfs-auto-snapshot zfs-zed zfssnap libguestfs-zfs libvirt-daemon-driver-storage-zfs zfs-initramfs
