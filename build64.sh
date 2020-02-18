@@ -22,7 +22,7 @@ sudo apt install -y build-essential bison flex bc libssl-dev wget git
 
 wget https://github.com/raspberrypi/linux/archive/raspberrypi-kernel_1.20200210-1.tar.gz
 tar -xvf raspberrypi-kernel_1.20200210-1.tar.gz
-cd raspberrypi-kernel_1.20200210-1
+cd linux-raspberrypi-kernel_1.20200210-1
 KERNEL=kernel8
 make bcm2711_defconfig
 make -j6
