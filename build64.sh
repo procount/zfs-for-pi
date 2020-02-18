@@ -9,6 +9,7 @@
 set -e
 set -x
 
+. ./version
 CUR_DIR="$(pwd)"
 cd ~
 
@@ -20,9 +21,9 @@ sudo apt install -y build-essential bison flex bc libssl-dev wget git
 # Build Linux kernel. Most of this we don't use - we just need the
 # kernel headers and the Module.symvers
 
-wget https://github.com/raspberrypi/linux/archive/raspberrypi-kernel_1.20200212-1.tar.gz
-tar -xvf raspberrypi-kernel_1.20200212-1.tar.gz
-cd linux-raspberrypi-kernel_1.20200212-1
+wget https://github.com/raspberrypi/linux/archive/raspberrypi-kernel_${RELEASE}.tar.gz
+tar -xvf raspberrypi-kernel_${RELEASE}.tar.gz
+cd linux-raspberrypi-kernel_${RELEASE}
 KERNEL=kernel8
 make bcm2711_defconfig
 make -j6
@@ -55,12 +56,12 @@ make distclean || true
 
 ./autogen.sh
 autoreconf --install --force
-./configure --with-linux=/home/pi/linux-raspberrypi-kernel_1.20200212-1
+./configure --with-linux=/home/pi/linux-raspberrypi-kernel_${RELEASE}
 
 make -s -j6
 sudo make install
 
-tar -cvzf /home/pi/64-bit-zfs-modules-4.19.97-v8+.tar.gz /lib/modules/4.19.97-v8/extra
+tar -cvzf /home/pi/64-bit-zfs-modules-${KVERSION}-v8+.tar.gz /lib/modules/${KVERSION}-v8/extra
 echo "Now exit the 64-bit userland, back to 32-bit userland (staying on 64-bit kernel) and run build64_part2.sh"
 
 cd "${CUR_DIR}"
