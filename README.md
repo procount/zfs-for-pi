@@ -5,7 +5,9 @@ Based on Alexey Tsarev's gist at https://gist.github.com/Alexey-Tsarev/d5809e353
 
 This repository contains build scripts to allow building ZFS on Raspbian. It builds ZFS both as 64-bit modules and as 32-bit modules. It is recommended that under normal circumstances your system should use the 64-bit kernel only for ZFS. The reason the 32-bit kernel modules are built and installed is that the rest of the 32-bit build is required because Raspbian has a 32-bit userland, and the easiest way to get those parts is to simply build the whole 32-bit thing.
 
-**N.B.** When the Raspbian kernel gets updated you must manually update these build scripts to point to the relevant source archive. Bear in mind that updating your Pi using `apt` or `apt-get` will sometimes upgrade the kernel, which will cause ZFS to not load, unless you then build the modules using these scripts. You may find it useful to put the kernel packages on hold like this:
+**N.B.** When the Raspbian kernel gets updated, you must manually update these build scripts to point to the relevant source archive. This is now done using the `version` file. There are two variables that need changed - `RELEASE` specifies the end of the release tag (e.g. 1.20200212-1), which can be found at https://github.com/raspberrypi/linux/releases, the other is `KVERSION` which specifies the kernel version (e.g. 4.19.97), which can be found by examining the tarball using e.g. tar -tvf raspberrypi-kernel_1.20200212-1.tar.gz.
+
+Bear in mind that updating your Pi using `apt` or `apt-get` will sometimes upgrade the kernel, which will cause ZFS to not load, unless you then build the modules using these scripts. You may find it useful to put the kernel packages on hold like this:
 
 ~~~~
 sudo apt-mark hold raspberrypi-bootloader
