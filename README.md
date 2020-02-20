@@ -32,7 +32,9 @@ sudo apt-mark unhold raspberrypi-kernel-headers
 6. Switch to a 32-bit kernel
 7. Run build32.sh
 8. Switch to a 64-bit kernel
-9. Profit
+9. `sudo depmod -a`
+10. `sudo modprobe zfs`
+11. Profit
 
 Note: Getting the ZFS modules to load at boot time seems to be hit and miss - see https://github.com/zfsonlinux/zfs/issues/8885. In particular, if you have zpool(s) which consists of only files, not disks, then the pool(s) will fail to mount on boot. A quick and dirty workaround is to simply force the loading of the ZFS modules at boot time by adding `zfs` to `/etc/modules-load.d/modules.conf`.
 
