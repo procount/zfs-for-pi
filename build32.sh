@@ -26,7 +26,7 @@ sudo apt install -y zlib1g-dev uuid-dev libattr1-dev libblkid-dev libselinux-dev
 sudo apt install -y libacl1-dev libaio-dev libdevmapper-dev libelf-dev
 sudo apt install -y python3 python3-dev python3-setuptools python3-cffi
 
-cd /home/pi/linux-raspberrypi-kernel_${RELEASE}/zfs
+cd ~/linux-raspberrypi-kernel_${RELEASE}/zfs
 
 make clean || true
 make distclean || true
