@@ -56,7 +56,7 @@ make distclean || true
 
 ./autogen.sh
 autoreconf --install --force
-./configure --with-linux=/home/pi/linux-raspberrypi-kernel_${RELEASE}
+./configure --with-linux=~/linux-raspberrypi-kernel_${RELEASE}
 
 make -s -j6
 sudo make install
