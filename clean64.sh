@@ -13,7 +13,6 @@ set -x
 CUR_DIR="$(pwd)"
 cd ~
 
-cd ~
 sudo rm -rf linux-raspberrypi-kernel_${RELEASE}
 sudo rm -rf /lib/modules/${KVERSION}-v8+
 
